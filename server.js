@@ -39,7 +39,17 @@ app.use(bodyParser.urlencoded({
 
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/hwnextscrapenmangoose");
+var dburl = "mongodb://localhost/hwnextscrapenmangoose";
+
+if (process.env.MONGODB_URI) {
+
+  mongoose.connect(process.env.MONGODB_URI);
+
+}else {
+  mongoose.connect(dburl);
+}
+
+
 var db = mongoose.connection;
 
 // Show any mongoose errors
