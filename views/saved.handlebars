@@ -1,0 +1,79 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Saved Articles</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li class="active"><a href="/saved">Saved Articles</a></li>
+    </ul>
+  </div>
+</nav>
+
+{{!-- <div class="jumbotron text-center"> --}}
+{{!--   <div class="overlay">
+  </div>
+  <div class="background-image">
+  </div> --}}
+  <div class="caption">
+    <h3>.</h3>
+    <p>...</p>
+    <p>...</p>
+    <p>..</p>
+  </div>
+{{!-- </div> --}}
+
+<div class="container-fluid article-container">
+  {{#each articles}}
+
+<p> {{this.title}} </p>
+
+<p> {{this.summary}} </p>
+
+  {{#each this.note}} 
+  <div>
+  {{this.note}}
+    <form action="/delete/note/{{this._id}}/" method="POST">
+    {{!-- <form action="/delete/note/articleid/{{this._id}}/" method="POST"> --}}
+    {{!-- <button type="submit">X</button> --}}
+    </form>
+  </div>
+
+  {{/each}}
+
+{{!-- ///Added section for comment --}}
+ <button class="shownotes" data-id="{{this.id}}" >Article Notes</button>
+<div id="notes{{this.id}}" data-status="hidden" class="container" style="display:none;">
+  <div class="row">
+  <div class="col-xs-12 text-center">
+<form class="create-update-form" action="/articles/{{this.id}}" method="POST">
+
+      <input type="text" id="ca" comment="comment" name="note"/>
+      <input type="hidden" value="{{this.id}}" name="article"/>
+      <button type="submit">Submit</button>
+
+</form>
+
+      </div>
+    </div>
+   
+
+    {{!--   /// Added section ends --}}
+
+
+   </div>
+
+  {{/each}}
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>New York Times Mongo Scraper</p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+  <script src="../../assets/javascript/saved.js"></script>

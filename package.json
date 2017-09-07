@@ -1,0 +1,32 @@
+{
+  "name": "scrape",
+  "version": "1.0.0",
+  "description": "Scarp using Mangoose",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miritalakhani/News-Scrape-using-Mongo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miritalakhani/News-Scrape-using-Mongo/issues"
+  },
+  "homepage": "https://github.com/miritalakhani/News-Scrape-using-Mongo#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "handlebar": "^1.0.0",
+    "handlebars": "^4.0.10",
+    "mongoose": "^4.11.6",
+    "morgan": "^1.8.2",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {}
+}

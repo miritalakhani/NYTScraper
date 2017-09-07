@@ -1,0 +1,13 @@
+body {
+	/*background-image: url("/assets/images/backgroundmain.jpg");*/
+	background-color: #ffff94;
+	align-content: center;
+	text-align: left;
+	color: #340e1c;
+	font-weight: bold;
+}
+
+.caption{
+	background-image: url("/assets/images/background.jpg");
+}
+
