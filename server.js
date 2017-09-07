@@ -267,7 +267,8 @@ app.delete("/delete/note/articleid/:id", function(req, res) {
 
 ///////////////////
 
+var port = process.env.PORT || 3000;
 // Listen on port 3000
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log("App running on port 3000!");
 });
